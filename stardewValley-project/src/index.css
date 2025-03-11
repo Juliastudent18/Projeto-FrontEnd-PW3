@@ -1,0 +1,10 @@
+/* RESET DE CSS: */
+h1, h2, h3, h4, h5, h6, p, img{
+  margin: 1px;
+  padding: 1px;
+}
+
+body {
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3c81bf4c-53df-47dd-bd2d-0015c90567ba/dhg6zhi-453c6641-d8ca-44ea-8211-72b45ea77c05.jpg/v1/fill/w_1024,h_615,q_75,strp/stardew_valley_wallpaper_nature_3d_hd_gaming_art_d_by_xrebelyellx_dhg6zhi-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNjODFiZjRjLTUzZGYtNDdkZC1iZDJkLTAwMTVjOTA1NjdiYVwvZGhnNnpoaS00NTNjNjY0MS1kOGNhLTQ0ZWEtODIxMS03MmI0NWVhNzdjMDUuanBnIiwiaGVpZ2h0IjoiPD02MTUiLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiJcL3dtXC8zYzgxYmY0Yy01M2RmLTQ3ZGQtYmQyZC0wMDE1YzkwNTY3YmFcL3hyZWJlbHllbGx4LTQucG5nIiwib3BhY2l0eSI6OTUsInByb3BvcnRpb25zIjowLjQ1LCJncmF2aXR5IjoiY2VudGVyIn19.CRDfmp7P8p-lNEHn8EpRitO__kgx6Tg9SPYSSpgdhtc");
+  background-size: 100%;
+}

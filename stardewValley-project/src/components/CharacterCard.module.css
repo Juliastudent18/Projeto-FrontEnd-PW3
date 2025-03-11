@@ -1,0 +1,24 @@
+.characterCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: max-content;
+    padding: 5px;
+    background-color: #DEDEDE;
+    border: 1px solid #CCC;
+    font-family: Helvetica;
+}
+
+.nome{
+    font-size: 12px;
+}
+
+.naturalidade{
+    font-size: 10px;
+}
+
+img{
+    width: 80px;
+    border-radius: 5px;
+}
