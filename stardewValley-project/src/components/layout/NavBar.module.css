@@ -22,14 +22,9 @@
     color: #FFE5B4;
 }
 
-.item a{
+.item:hover{
     color:#7733ff;
-    text-decoration: none;
-}
-
-
-.item a:hover{
-    color:#7733ff;
+    scale: 110%;
 }
 
 .logo{

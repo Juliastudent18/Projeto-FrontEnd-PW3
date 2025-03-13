@@ -1,0 +1,14 @@
+.list_character_container{
+    border-radius: 10px;
+    width: fit-content;
+    align-items: center;
+    margin-top: 150px;
+    margin-left: 55px;
+    padding: 2em;
+    background-color: #FFE5B4;
+    border: 3px solid #672d0e;
+}
+
+.list_character_container h1 {
+    color: #672d0e;
+}

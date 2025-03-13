@@ -1,8 +1,14 @@
 .create_character_container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    border-radius: 10px;
+    width: fit-content;
     align-items: center;
-    justify-content: center;
-    padding: 4em;
+    margin-top: 150px;
+    margin-left: 55px;
+    padding: 2em;
+    background-color: #FFE5B4;
+    border: 3px solid #672d0e;
+}
+
+.create_character_container h1 {
+    color: #672d0e;
 }

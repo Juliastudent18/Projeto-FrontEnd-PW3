@@ -1,11 +1,13 @@
 .home_container{
+    border-radius: 10px;
+    width: fit-content;
+    justify-content: center;
     margin-top: 150px;
+    margin-left: 130px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 4em;
     background-color: #FFE5B4;
-    border: 3px solid #000000;
+    border: 3px solid #672d0e;
 }
 
 .home_container h1{
@@ -25,6 +27,10 @@
 }
 
 .home_container img{
-    width: 800px;
-    margin: 0;
+    width: 100px;
+}
+
+.home_container div {
+    text-align: center;
+    flex-direction: column;
 }

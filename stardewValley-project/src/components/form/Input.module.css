@@ -1,3 +1,9 @@
+input {
+    height: 20px;
+    border-radius: 10px;
+    border: 2px, solid, #672d0e;
+}
+
 .form_control{
     display: flex;
     flex-direction: column;
@@ -7,8 +13,7 @@
 .form_control label{
     padding: .7em;
     border-radius: 0;
-    border: none;
-    color: #000154;
+    color: #672d0e;
     font-weight: bold;
 }
 
@@ -18,5 +23,5 @@
 }
 
 .form_control input::placeholder{
-    color: #7B7B7B;
+    color: #672d0e;
 }

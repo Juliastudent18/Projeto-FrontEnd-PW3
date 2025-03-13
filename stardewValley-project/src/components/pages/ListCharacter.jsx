@@ -3,8 +3,8 @@ import style from './ListCharacter.module.css'
 
 const ListCharacter = ()=>{
     return(
-        <section>
-            <h1>LIST CHARACTER</h1>
+        <section className = {style.list_character_container}>
+            <h1>LISTAGEM DE PERSONAGENS</h1>
         </section>
     )
 }
