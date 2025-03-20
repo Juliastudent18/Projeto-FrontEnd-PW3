@@ -1,9 +1,12 @@
 .create_character_container{
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
     width: fit-content;
     align-items: center;
-    margin-top: 150px;
-    margin-left: 55px;
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 2em;
     background-color: #FFE5B4;
     border: 3px solid #672d0e;
@@ -11,4 +14,19 @@
 
 .create_character_container h1 {
     color: #672d0e;
+}
+
+.create_character_container form {
+    display: flex;
+    flex-direction: row;
+}
+
+.coluna {
+    display: flex;
+    flex-direction: column;
+}
+
+.linha {
+    display: flex;
+    flex-direction: row;
 }

@@ -1,18 +1,19 @@
 button{
-    margin-top: 20px;
-    background-color: #FFE5B4;
-    color: #672d0e;
+    width: 275px;
+    margin-top: 45px;
+    background-color: #672d0e;
+    color: #FFE5B4;
     padding: 0 45px;
     border: 2px solid #672d0e;
     border-radius: 10px;
-    height: 50px;
+    height: 43px;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.em;
     cursor: pointer;
     transition: .4s;
 }
 
 button:hover{
-    background-color:#7733ff;
+    background-color:#33ff41;
 }
