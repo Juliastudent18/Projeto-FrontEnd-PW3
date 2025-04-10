@@ -4,28 +4,98 @@ import Input from "../form/Input";
 import SelectHabitat from "../form/SelectHabitat";
 import SelectCharacter from "../form/SelectCharacter";
 import Button from "../form/Button";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 const CreateCharacter = ()=>{
 
     const [character, setCharacter] = useState({});
+    const [moradia, setMoradia] = useState([]);
+    const [favorito, setFavorito] = useState([]);
+
+
 
     function handlerChangeCharacter(event){
         setCharacter({...character, [event.target.name] : event.target.value});
     }
 
     function handlerChangeHome(event){
-        setCharacter({...character, home : event.target.options[event.target.selectedIndex].text})
+        setCharacter({...character, moradia : event.target.options[event.target.selectedIndex].value})
     }
 
     function handlerChangeFavorite(event){
-        setCharacter({...character, favorite : event.target.options[event.target.selectedIndex].text})
+        setCharacter({...character, favorito : event.target.options[event.target.selectedIndex].value})
+    }
+
+    function insertCharacter(character) {
+        fetch('http://127.0.0.1:5000/inserirPessoa', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type':'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                    'Access-Control-Allow-Headers':'*'
+                },
+                body : JSON.stringify(character)
+            }
+        ).then((resp) =>
+            resp.json()
+        ).then((respJSON) => {
+                console.log('RESPOSTA: ' + respJSON);
+            }
+        ).catch((error) => {
+            console.log('ERRO: ' + error);
+        })
     }
 
     function submit(event){
         event.preventDefault();
         console.log(character);
+        insertCharacter(character)
     }
+
+    useEffect(() => {
+        fetch('http://127.0.0.1:5000/listagemMoradias',
+            {
+                method: 'GET',
+                headers: {
+                    'Content-Type':'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                    'Access-Control-Allow-Headers':'*'
+                }
+            }
+        ).then((resp) =>
+            resp.json()
+        ).then((moradia) => {
+            console.log('TESTE: ' + moradia.data);
+            setMoradia(moradia.data)
+            }
+        ).catch((error) => {
+                console.log('ERRO: ' + error);
+            }
+        )
+    }, []);
+
+    useEffect(() => {
+        fetch('http://127.0.0.1:5000/listagemPersonagens',
+            {
+                method: 'GET',
+                headers: {
+                    'Content-Type':'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                    'Access-Control-Allow-Headers':'*'
+                }
+            }
+        ).then((resp) =>
+            resp.json()
+        ).then((favorito) => {
+            console.log('TESTE: ' + favorito.data);
+            setFavorito(favorito.data)
+            }
+        ).catch((error) => {
+                console.log('ERRO: ' + error);
+            }
+        )
+    }, []);
 
     return(
         <section className = {style.create_character_container}>
@@ -38,34 +108,36 @@ const CreateCharacter = ()=>{
                                 handlerChange = {handlerChangeCharacter}
                                 text = 'Nome do Personagem' 
                                 type = 'text'
-                                name = 'txt_nome' 
-                                id = 'txt_nome' 
+                                name = 'nome' 
+                                id = 'nome' 
                                 placeholder = 'Digite o nome do personagem'/>
                             <Input
                                 handlerChange = {handlerChangeCharacter}
                                 text = 'Descrição do Personagem' 
                                 type = 'text'
-                                name = 'txt_descricao' 
-                                id = 'txt_descricao' 
+                                name = 'descricao' 
+                                id = 'descricao' 
                                 placeholder = 'Descreva o personagem'/>
                             <Input 
                                 handlerChange = {handlerChangeCharacter}
                                 text = 'data de nascimento' 
                                 type = 'date'
-                                name = 'data_nascimento' 
-                                id = 'data_nascimento'/>
+                                name = 'data_nasc' 
+                                id = 'data_nasc'/>
                         </div>
                         <div>        
                             <SelectHabitat
                                 handlerChange = {handlerChangeHome}
-                                name = 'slc_moradia'
-                                id = 'slc_moradia'
+                                options = {moradia}
+                                name = 'moradia'
+                                id = 'moradia'
                                 text = 'Area de moradia'/>
                             <SelectCharacter
                                 handlerChange = {handlerChangeFavorite}
-                                name = 'slc_personagem'
-                                id = 'slc_personagem'
-                                text = 'Par Romântico'/>
+                                options = {favorito}
+                                name = 'fvrt_perso'
+                                id = 'fvrt_perso'
+                                text = 'Personagem favorito'/>
                             <Button
                                 label = 'Cadastrar Personagem'
                             />
