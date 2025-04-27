@@ -1,0 +1,7 @@
+.container_character{
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    margin: 100px;
+    padding: 2em;
+}

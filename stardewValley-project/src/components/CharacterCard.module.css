@@ -1,24 +1,20 @@
 .characterCard{
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
     align-items: center;
-    border-radius: 5px;
-    width: max-content;
-    padding: 5px;
-    background-color: #DEDEDE;
-    border: 1px solid #CCC;
-    font-family: Helvetica;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+    background-color: #FFE5B4;
+    border: 3px solid #672d0e;
 }
 
-.nome{
-    font-size: 12px;
+p{
+    color: #672d0e;
 }
 
-.naturalidade{
-    font-size: 10px;
-}
-
-img{
-    width: 80px;
-    border-radius: 5px;
+img {
+    width: 64px;
+    
 }
