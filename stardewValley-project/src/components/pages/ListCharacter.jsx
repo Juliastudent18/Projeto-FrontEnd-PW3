@@ -39,10 +39,10 @@ const ListCharacter = ()=>{
                         <CharacterCard
                             character_nome={character.character_nome}
                             descricao={character.descricao}
-                            moradia_nome={character.tbl_moradium?.moradia_nome} // <- Puxa de modelMoradia
+                            moradia_nome={character.tbl_moradium?.moradia_nome}
                             data_nasc={character.data_nasc}
                             favorite_nome={character.tbl_personagen?.favorite_nome}
-                            imagem= {edu} // <- Puxa de modelFavorite
+                            imagem= {edu}
                             key={character.id}
                         />
                     ))

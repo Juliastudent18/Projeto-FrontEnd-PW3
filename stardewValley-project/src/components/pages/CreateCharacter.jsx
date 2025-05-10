@@ -23,34 +23,7 @@ const CreateCharacter = ()=>{
     }
 
     function handlerChangeFavorite(event){
-        setCharacter({...character, favorito : event.target.options[event.target.selectedIndex].value})
-    }
-
-    function insertCharacter(character) {
-        fetch('http://127.0.0.1:5000/inserirPessoa', {
-                method: 'POST',
-                mode: 'cors',
-                headers: {
-                    'Content-Type':'application/json',
-                    'Access-Control-Allow-Origin':'*',
-                    'Access-Control-Allow-Headers':'*'
-                },
-                body : JSON.stringify(character)
-            }
-        ).then((resp) =>
-            resp.json()
-        ).then((respJSON) => {
-                console.log('RESPOSTA: ' + respJSON);
-            }
-        ).catch((error) => {
-            console.log('ERRO: ' + error);
-        })
-    }
-
-    function submit(event){
-        event.preventDefault();
-        console.log(character);
-        insertCharacter(character)
+        setCharacter({ ...character, fvrt_perso: event.target.value })
     }
 
     useEffect(() => {
@@ -66,7 +39,6 @@ const CreateCharacter = ()=>{
         ).then((resp) =>
             resp.json()
         ).then((moradia) => {
-            console.log('TESTE: ' + moradia.data);
             setMoradia(moradia.data)
             }
         ).catch((error) => {
@@ -88,7 +60,6 @@ const CreateCharacter = ()=>{
         ).then((resp) =>
             resp.json()
         ).then((favorito) => {
-            console.log('TESTE: ' + favorito.data);
             setFavorito(favorito.data)
             }
         ).catch((error) => {
@@ -96,6 +67,33 @@ const CreateCharacter = ()=>{
             }
         )
     }, []);
+
+    function insertCharacter(character) {
+        fetch('http://127.0.0.1:5000/inserirPessoa', {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type':'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                    'Access-Control-Allow-Headers':'*'
+                },
+                body : JSON.stringify(character)
+            }
+        ).then((resp) =>
+            resp.json()
+        ).then((character) => {
+                setCharacter(character.data)
+            }
+        ).catch((error) => {
+            console.log('ERRO: ' + error);
+        })
+    }
+
+    function submit(event){
+        event.preventDefault();
+        console.log(character);
+        insertCharacter(character)
+    }
 
     return(
         <section className = {style.create_character_container}>
