@@ -1,7 +1,44 @@
-.container_character{
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
-    border-radius: 10px;
-    margin: 100px;
-    padding: 2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px 40px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.navLeft,
+.navRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #6f3b0f;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    width: 10px;
+    height: 50px;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 10;
+    transition: .4s;
+    border: 2px solid #672d0e;
+}
+
+.navLeft {
+    left: 10px;
+}
+
+.navRight {
+    right: 10px;
 }

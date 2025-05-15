@@ -4,6 +4,7 @@ import Input from "../form/Input";
 import SelectHabitat from "../form/SelectHabitat";
 import SelectCharacter from "../form/SelectCharacter";
 import Button from "../form/Button";
+import Swal from 'sweetalert2'
 import {useState, useEffect} from "react";
 
 const CreateCharacter = ()=>{
@@ -83,6 +84,17 @@ const CreateCharacter = ()=>{
             resp.json()
         ).then((character) => {
                 setCharacter(character.data)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Personagem criado com sucesso!',
+                    text: `O cara tá vivíssimo agora!`,
+                    customClass: {
+                        title: style.titleAlert,
+                        htmlContainer: style.titleContent,
+                        confirmButton: style.alertConfirmButton,
+                        cancelButton: style.alertCancelButton,
+                    }
+                });
             }
         ).catch((error) => {
             console.log('ERRO: ' + error);

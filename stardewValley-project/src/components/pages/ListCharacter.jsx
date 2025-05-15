@@ -1,53 +1,39 @@
-import React from "react"
-import { useState, useEffect } from "react"
-import CharacterCard from "../CharacterCard"
+import React, { useState, useEffect } from 'react'
 import ContainerCharacter from '../layout/ContainerCharacter'
-import style from './ListCharacter.module.css'
 import edu from '../../assets/edu.png'
 
-const ListCharacter = ()=>{
-    const [character, setCharacter] = useState([])
+const ListCharacter = () => {
+    const [characters, setCharacters] = useState([])
 
     useEffect(() => {
         fetch('http://127.0.0.1:5000/listagemPessoas', {
-                method: 'GET',
-                mode: 'cors',
-                headers: {
-                    'Content-Type':'application/json',
-                    'Access-Control-Allow-Origin':'*',
-                    'Access-Control-Allow-Headers':'*'
-                }
-            }
-        ).then((resp) =>
-            resp.json()
-        ).then((characterData) => 
-            {
-                console.log(characterData);
-                setCharacter(characterData.data)
-            }
-        ).catch((error) => {
-            console.log('ERRO: ' + error);
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': '*',
+        },
+        })
+        .then((resp) => resp.json())
+        .then((characterData) => {
+            console.log(characterData)
+            // adiciona a imagem aqui se quiser
+            const charsWithImg = characterData.data.map((char) => ({
+            ...char,
+            imagem: edu,
+            }))
+            setCharacters(charsWithImg)
+        })
+        .catch((error) => {
+            console.log('ERRO: ' + error)
         })
     }, [])
 
-    return(
+    return (
         <section>
-            <h1>LIST CHARACTER</h1>
-            <ContainerCharacter>
-                {
-                    character.map((character) => (
-                        <CharacterCard
-                            character_nome={character.character_nome}
-                            descricao={character.descricao}
-                            moradia_nome={character.tbl_moradium?.moradia_nome}
-                            data_nasc={character.data_nasc}
-                            favorite_nome={character.tbl_personagen?.favorite_nome}
-                            imagem= {edu}
-                            key={character.id}
-                        />
-                    ))
-                }
-            </ContainerCharacter>
+        <h1>LIST CHARACTER</h1>
+        <ContainerCharacter characters={characters} />
         </section>
     )
 }
