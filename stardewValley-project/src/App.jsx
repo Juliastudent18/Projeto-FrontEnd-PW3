@@ -4,12 +4,10 @@ import './App.css'
 
 import Container from './components/layout/Container'
 
-/* IMPORTS DOS COMPONENTES DE PÁGINAS */
 import Home from './components/pages/Home'
 import CreateCharacter from './components/pages/CreateCharacter.jsx'
 import ListCharacter from './components/pages/ListCharacter.jsx'
-
-/* IMPORTAÇÃO DO NAVBAR */
+import Details from './components/pages/Details.jsx'
 import NavBar from './components/layout/NavBar'
 
 function App() {
@@ -30,6 +28,7 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/newCharacter' element={<CreateCharacter />} />
                 <Route path='/listCharacter' element={<ListCharacter />} />
+                <Route path='/details/:id' element={<Details />} />
 
               </Route>
 

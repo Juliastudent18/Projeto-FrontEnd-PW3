@@ -1,7 +1,7 @@
 /* RESET DE CSS: */
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
 
-h1, h2, h3, h4, h5, h6, p, img, a, link, button, input, select, label {
+h1, h2, h3, h4, h5, h6, p, img, a, link, button, input, select, label, span, strong {
   text-decoration: none;
   font-family: "Pixelify Sans", sans-serif;;
   margin: 1px;

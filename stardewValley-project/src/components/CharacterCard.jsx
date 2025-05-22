@@ -21,7 +21,11 @@ const CharacterCard = ({id, character_nome, descricao, moradia_nome, data_nasc, 
                 </ul>
             </div>
             <div className={style.footer}>
-                <Button label="Detalhe" />
+                <Button 
+                    label = "Detalhe"
+                    id = {id}
+                    router = '/details/'
+                />
             </div>
         </div>
     )

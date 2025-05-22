@@ -1,0 +1,74 @@
+.container {
+    max-width: 700px ;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    padding: 1em;
+    background-color: #FFE5B4;
+    border: 3px solid #672d0e;
+    color: #672d0e;
+}
+
+.character {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.descCharacter {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo {
+    display: grid;
+    align-items: start;
+    justify-items: start;
+    align-self: self-start;
+}
+
+.img {
+    width: 150px;
+    border: 3px solid #672d0e;
+    border-radius: 10px;
+    image-rendering: pixelated;
+}
+.descricao {
+    padding-left: 10px;
+}
+
+.nome {
+    font-size: 35px;
+    padding-left: 10px;
+}
+
+.container_buttons {
+    margin-left: 30px;
+    margin-right: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+}
+
+.moradia, .favorito, .data_nasc {
+    font-size: 25px;
+}
+
+.favHome {
+    display: flex;
+    flex-direction: row;
+}
+
+.moradiaContainer, .favoritoContainer {
+    margin: 20px;
+    margin-bottom: 0px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #672d0e;
+    max-width: 315px;
+}

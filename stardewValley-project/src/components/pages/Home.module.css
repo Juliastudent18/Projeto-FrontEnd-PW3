@@ -1,6 +1,6 @@
 .home_container{
     border-radius: 10px;
-    width: fit-content;
+    width: auto;
     justify-content: center;
     margin-top: 150px;
     margin-left: 130px;
