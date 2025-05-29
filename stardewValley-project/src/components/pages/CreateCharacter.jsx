@@ -94,7 +94,7 @@ const CreateCharacter = ()=>{
                         confirmButton: style.alertConfirmButton,
                         cancelButton: style.alertCancelButton,
                     }
-                });
+                })
             }
         ).catch((error) => {
             console.log('ERRO: ' + error);

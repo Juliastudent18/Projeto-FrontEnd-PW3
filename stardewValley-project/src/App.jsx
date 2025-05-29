@@ -7,6 +7,7 @@ import ListCharacter from './components/pages/ListCharacter.jsx'
 import Details from './components/pages/Details.jsx'
 import NavBar from './components/layout/NavBar'
 import UpdateCharacters from './components/pages/UpdateDetails.jsx'
+import DeleteCharacter from './components/pages/DeleteCharacter.jsx'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path='/listCharacter' element={<ListCharacter />} />
                 <Route path='/details/:id' element={<Details />} />
                 <Route path='/updateCharacter/:id' element={<UpdateCharacters />} />
+                <Route path='/deleteCharacter/:id' element={<DeleteCharacter />} />
               </Route>
             </Routes>
           </Container>
